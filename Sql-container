@@ -1,0 +1,26 @@
+First , pull sql command
+docker pull mysql:latest
+
+run docker container
+ 
+   docker run mysql:latest
+
+it will show an error becoj in mysql , environment variable is needed..so run the below cmd:
+
+ docker run -d -e MYSQL_ROOT_PASSWORD=test@123 mysql:latest
+  here d = daemon (background process)
+       e = environment variable
+
+now to enter inside the container run :
+
+  docker exec -it 01d7fc77c59c sh
+
+it = for interactive shell
+sh = is for shell 
+
+now for mysql run following cmd:
+
+mysql -u root -p
+test@123
+
+show databases;
